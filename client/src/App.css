@@ -1,0 +1,17 @@
+.spacer{
+    flex:1;
+}
+
+.App{
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 962px) {
+    .App {
+      width: 100%;
+    }
+  }
