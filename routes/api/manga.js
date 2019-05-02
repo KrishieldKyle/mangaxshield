@@ -49,7 +49,7 @@ router.post("/id", (req, res) => {
 });
 
 // @routes  POST api/manga/id/chapter
-// @desc    Get manga
+// @desc    Get manga chapters
 // @access  public
 router.post("/id/chapter", (req, res) => {
     const id = req.body.id;
