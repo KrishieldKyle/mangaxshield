@@ -1,0 +1,35 @@
+{
+  "name": "mangaxshield",
+  "version": "1.0.0",
+  "description": "manga website",
+  "main": "app.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && npm install --prefix krishield-kyle-plagiarism"
+  },
+  "keywords": [
+    "manga",
+    "website"
+  ],
+  "author": "Krishield Kyle Santoyo",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.5",
+    "node-fetch": "^2.5.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-validator": "^1.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
