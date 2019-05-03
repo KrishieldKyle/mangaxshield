@@ -1,7 +1,7 @@
 .homeContainer{
     min-height: calc(100vh - 200px);
     width: 75%;
-    background: rgb(155, 98, 98);
+    background: rgb(201, 226, 221);
     padding: 0.5em;
 }
 
@@ -15,13 +15,47 @@
     flex-basis: 100%;
 }
 
-.square{
+.column a{
+    text-decoration: none;
+}
+
+.mangaItem{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
     width: 200px;
     height: 300px;
     background-size: 200px 300px;
+    margin-bottom: 10px;
+    background-blend-mode: saturation;
+    background-position: center;
+    cursor: pointer;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(107,107,107,0.81);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(107,107,107,0.81);
+    box-shadow: 0px 0px 5px 1px rgba(107,107,107,0.81);
+}
+
+.mangaItem p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.mangaItem:hover{
+    background-size: 250px 350px;
+    background-position: center; 
+    margin-bottom: 10px;
+    background-color: rgba(58, 22, 22, 0.5);
+    transition: 0.4s;
+}
+
+.mangaItem:hover p{
+    transition: 0.8s;
+    background: rgb(35, 35, 36);
 }
 
 @media screen and (min-width: 350px) {
