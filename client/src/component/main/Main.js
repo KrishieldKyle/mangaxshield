@@ -17,9 +17,11 @@ export default class Main extends Component {
     return (
       
         <div className="mainContainer">
-          <Route exact path="/" component={Home} />
-          <Route exact path="/:id" component={MangaInfo} />
-          <Sidebar/>
+          {/* <Route exact path="/" components={Home} />
+          <Route exact path="/:id" components={MangaInfo} />
+          <Sidebar/> */}
+          <Route exact path="/" render={props => <div className="mainContainer"><Home props={props}/><Sidebar props={props}/></div>} />
+          <Route exact path="/:id" render={props => <div className="mainContainer"><MangaInfo props={props}/><Sidebar props={props}/></div>} />
         </div>
       
     )
