@@ -1,6 +1,7 @@
-import { GET_ALL_MANGA,GET_ALL_MANGA_LOADING  } from "../actions/types";
+import { GET_ALL_MANGA,GET_ALL_MANGA_LOADING, GET_MANGA  } from "../actions/types";
 
 const initialState = {
+    mangas: {},
     manga: {},
     loading: false
 };
@@ -8,7 +9,13 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch (action.type) {
-      case GET_ALL_MANGA:
+    case GET_ALL_MANGA:
+        return {
+          ...state,
+          mangas: action.payload,
+          loading: false
+        };
+    case GET_MANGA:
         return {
           ...state,
           manga: action.payload,
