@@ -27,8 +27,8 @@ class MangaInfo extends Component {
         };
       }
     componentDidMount(){
-        if (this.props.match.params.id) {
-            this.props.getMangaById({id: this.props.match.params.id}, (len)=>{
+        if (this.props.props.match.params.id) {
+            this.props.getMangaById({id: this.props.props.match.params.id}, (len)=>{
                 this.setState({loading: !this.state.loading, len})
             });
         }
@@ -58,7 +58,7 @@ class MangaInfo extends Component {
 
         chapters = manga.chapters.slice(start,end).map(chapter => 
             <div key={chapter[0]} className="columnForMangaInfo chapter">
-                <Link className="chapterLink" to={`/${this.props.match.params.id}/${chapter[3]}`}>Chapter {chapter[0]} - {chapter[2]} - {moment.unix(chapter[1]).format("MMMM Do YYYY, h:mm A")}</Link>
+                <Link className="chapterLink" to={`/${this.props.props.match.params.id}/${chapter[3]}`}>Chapter {chapter[0]} - {chapter[2]} - {moment.unix(chapter[1]).format("MMMM Do YYYY, h:mm A")}</Link>
             </div>
             )
 
