@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { Provider } from "react-redux";
+import store from "./store";
 
 // Main
 import Main from './component/main/Main'
@@ -11,11 +13,13 @@ import Navbar from './component/navbar/Navbar'
 import Footer from './component/footer/Footer'
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Main />
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Navbar />
+        <Main />
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 

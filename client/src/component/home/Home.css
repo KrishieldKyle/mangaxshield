@@ -1,5 +1,31 @@
 .homeContainer{
-    height: calc(100vh - 103px);
+    min-height: calc(100vh - 200px);
     width: 75%;
     background: rgb(155, 98, 98);
+    padding: 0.5em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex-basis: 100%;
+}
+
+.square{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    background-size: 200px 300px;
+}
+
+@media screen and (min-width: 350px) {
+    .column {
+        flex: 1;
+    }
 }
