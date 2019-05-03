@@ -3,6 +3,6 @@ import mangaReducer from "./mangaReducer";
 import errorReducer from "./errorReducer";
 
 export default combineReducers({
-    manga: mangaReducer,
+    mangas: mangaReducer,
     errors: errorReducer
 });
