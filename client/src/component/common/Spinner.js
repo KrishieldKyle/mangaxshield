@@ -6,7 +6,7 @@ export default function Spinner() {
     <div className="column">
       <img
         src={spinner}
-        style={{ width: "60px", margin: "auto", display: "block" }}
+        style={{ width: `60px`, margin: "auto", display: "block" }}
         alt="Loading..."
       />
     </div>

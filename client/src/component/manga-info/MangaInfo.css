@@ -1,8 +1,12 @@
 .mangaInfoContainer{
     min-height: calc(100vh - 200px);
     width: 75%;
-    background: rgb(201, 226, 221);
+    background: rgb(220, 223, 223);
     padding: 0.5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: lighten;
+    background-position: center;
 }
 
 .row {
@@ -59,16 +63,17 @@
     text-decoration: none;
     color: rgb(58, 65, 65);
     padding-bottom: 10px;
+    outline: none;
 }
 
 .chapterLink:hover{
-    color: rgb(22, 131, 204);
+    font-weight: 600;
 }
 
 .mangaHeaderDiv{
     border: 1px solid rgb(119, 99, 99);
     padding: 5px;
-    background-color: rgb(227, 233, 233);
+    background-color: rgb(225, 248, 248);
 }
 
 .mangaContentDiv{
@@ -98,5 +103,11 @@
     }
     ._75 {
         flex:7.5;
+    }
+}
+
+@media (max-width: 1387px) {
+    .mangaInfoContainer{
+        width: 100%;
     }
 }

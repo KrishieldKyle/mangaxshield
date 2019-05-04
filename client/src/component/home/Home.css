@@ -1,8 +1,17 @@
 .homeContainer{
     min-height: calc(100vh - 200px);
     width: 75%;
-    background: rgb(201, 226, 221);
+    background: rgb(220, 223, 223);
     padding: 0.5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: lighten;
+    background-position: center;
+}
+
+.homeContainer p{
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .row {
@@ -61,5 +70,11 @@
 @media screen and (min-width: 350px) {
     .column {
         flex: 1;
+    }
+}
+
+@media (max-width: 1387px) {
+    .homeContainer{
+        width: 100%;
     }
 }

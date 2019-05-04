@@ -11,7 +11,7 @@ import Spinner from '../common/Spinner';
 // Pagination
 import Pagination from '../common/Pagination'
 
-import {getManga} from '../../actions/mangaActions';
+import {getManga,clearManga} from '../../actions/mangaActions';
 
 
 class Home extends Component {
@@ -21,13 +21,15 @@ class Home extends Component {
       start: 0,
       end: 48,
       pageStart: 1,
-      len: 0
+      len: 0,
+      bgImage: ""
     };
   }
 
   componentDidMount(){
+    this.props.clearManga();
     this.props.getManga((len)=>{
-      this.setState({len})
+      this.setState({len, bgImage: "https://cdn.mangaeden.com/mangasimg/"+this.props.mangas.mangas.manga[0].im})
     });
   }
 
@@ -42,7 +44,6 @@ class Home extends Component {
       this.setState({start: this.state.start-48, end: this.state.end-48, pageStart: this.state.pageStart-1})
     }
   }
-
 
   render() {
 
@@ -92,7 +93,8 @@ class Home extends Component {
     }
 
     return (
-      <div className="homeContainer">
+      <div className="homeContainer" style={{ backgroundImage: `url(${this.state.bgImage})` }}>
+      <p>Read Manga Online!</p>
         {homeItems}
       </div>
     )
@@ -101,6 +103,7 @@ class Home extends Component {
 
 Home.propTypes = {
   getManga : PropTypes.func.isRequired,
+  clearManga : PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   mangas: PropTypes.object.isRequired
 }
@@ -110,4 +113,4 @@ const mapStateToProps = (state) => ({
   mangas : state.mangas
 })
 
-export default connect(mapStateToProps,{getManga})(Home)
+export default connect(mapStateToProps,{getManga,clearManga})(Home)

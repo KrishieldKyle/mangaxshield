@@ -56,9 +56,9 @@ class MangaInfo extends Component {
     const path = 'https://cdn.mangaeden.com/mangasimg/'
     if(!this.state.loading){
 
-        chapters = manga.chapters.slice(start,end).map(chapter => 
+        chapters = manga.chapters.slice(start,end).map((chapter,index) => 
             <div key={chapter[0]} className="columnForMangaInfo chapter">
-                <Link className="chapterLink" to={`/${this.props.props.match.params.id}/${chapter[3]}`}>Chapter {chapter[0]} - {chapter[2]} - {moment.unix(chapter[1]).format("MMMM Do YYYY, h:mm A")}</Link>
+                <Link className="chapterLink" to={`/${this.props.props.match.params.id}/${chapter[3]}/${index+start}`}>Chapter {chapter[0]} - {chapter[2]} - {moment.unix(chapter[1]).format("MMMM Do YYYY, h:mm A")}</Link>
             </div>
             )
 
@@ -119,15 +119,6 @@ class MangaInfo extends Component {
                     </div>
                     <div className="row">
                         <div className="columnForMangaInfo chapters">
-                        {/* <div className="pagination">
-                            <p onClick={this.handleLeftPagination}><i className={pageStart>1 ? "left" : "left iLeft"}></i></p>
-                            <div className="spacer"/>
-                            <div>
-                            <h5>{pageStart} of {len}</h5>
-                            </div>
-                            <div className="spacer"/>
-                            <p onClick={this.handleRightPagination}><i className={pageStart<len ? "right" : "right iRight"}></i></p>
-                        </div> */}
                         <Pagination start={start} end={end} pageStart={pageStart} len={len} handleLeftPagination={this.handleLeftPagination} handleRightPagination={this.handleRightPagination}/>
                             {chapters}
                         <Pagination start={start} end={end} pageStart={pageStart} len={len} handleLeftPagination={this.handleLeftPagination} handleRightPagination={this.handleRightPagination}/>
@@ -142,7 +133,8 @@ class MangaInfo extends Component {
     
 
     return (
-      <div className="mangaInfoContainer">
+      <div className="mangaInfoContainer" style={{ backgroundImage: `url(${path+this.props.mangas.manga.image})` }}>
+      <Link to="/">Go Back</Link>
         {mangaItem}
       </div>
     )

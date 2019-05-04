@@ -1,5 +1,5 @@
 footer{
     height: 50px;
-    background: rgb(132, 180, 172);
+    background-image: linear-gradient(rgb(211, 215, 216), rgb(123, 126, 125));
     text-align: center;
 }

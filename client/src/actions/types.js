@@ -3,6 +3,15 @@
 export const GET_ALL_MANGA = "GET_ALL_MANGA";
 export const GET_ALL_MANGA_LOADING = "GET_ALL_MANGA_LOADING";
 export const GET_MANGA = "GET_MANGA";
+export const CLEAR_MANGA = "CLEAR_MANGA";
+
+// CHAPTER
+export const GET_CHAPTER = "GET_CHAPTER";
+export const SET_PREV_AND_NEXT_CHAPTER = "SET_PREV_AND_NEXT_CHAPTER";
+export const SET_MANGA_ID = "SET_MANGA_ID";
+export const SET_CHAPTER_LOADING = "SET_CHAPTER_LOADING";
+export const CLEAR_CHAPTERS = "CLEAR_CHAPTERS";
+
 
 // ERROR
 export const GET_ERRORS = "GET_ERRORS";

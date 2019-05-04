@@ -1,6 +1,12 @@
 .sidebar{
     width: 25%;
     min-height: calc(100vh - 200px);
-    background: rgb(155, 207, 182);
+    background: rgb(221, 199, 199);
     padding: 0.5em;
+}
+
+@media (max-width: 1387px) {
+    .sidebar{
+        display: none;
+    }
 }

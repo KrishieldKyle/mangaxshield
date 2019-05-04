@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {GET_ALL_MANGA,GET_ERRORS,GET_ALL_MANGA_LOADING, CLEAR_ERRORS, GET_MANGA} from './types'
+import {GET_ALL_MANGA,GET_ERRORS,GET_ALL_MANGA_LOADING, CLEAR_ERRORS, GET_MANGA, CLEAR_MANGA} from './types'
 
 // Get all manga
 export const getManga = (callback) => dispatch => {
@@ -55,6 +55,13 @@ export const getMangaById = (input, callback) => dispatch => {
             payload: err
         })
     );
+};
+
+// Clear Manga
+export const clearManga = () => {
+  return {
+      type: CLEAR_MANGA
+  };
 };
 
 // Clear errors

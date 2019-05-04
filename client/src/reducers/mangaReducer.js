@@ -1,4 +1,4 @@
-import { GET_ALL_MANGA,GET_ALL_MANGA_LOADING, GET_MANGA  } from "../actions/types";
+import { GET_ALL_MANGA,GET_ALL_MANGA_LOADING, GET_MANGA, CLEAR_MANGA  } from "../actions/types";
 
 const initialState = {
     mangas: {},
@@ -25,6 +25,11 @@ export default function(state = initialState, action) {
         return {
           ...state,
           loading: true
+        };
+      case CLEAR_MANGA:
+        return {
+          ...state,
+          manga:{}
         };
       default:
         return state;
