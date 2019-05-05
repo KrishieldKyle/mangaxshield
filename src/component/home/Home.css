@@ -67,14 +67,39 @@
     background: rgb(35, 35, 36);
 }
 
-@media screen and (min-width: 350px) {
+@media screen and (min-width: 200px) {
     .column {
         flex: 1;
     }
+    
 }
 
 @media (max-width: 1387px) {
     .homeContainer{
         width: 100%;
+    }
+}
+
+@media (max-width: 1359px) {
+    .mangaItem{
+        width: 150px;
+        height: 250px;
+        background-size: 150px 250px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .mangaItem{
+        width: 130px;
+        height: 230px;
+        background-size: 130px 230px;
+    }
+}
+
+@media (max-width: 405px) {
+    .mangaItem{
+        width: 100px;
+        height: 180px;
+        background-size: 100px 180px;
     }
 }
