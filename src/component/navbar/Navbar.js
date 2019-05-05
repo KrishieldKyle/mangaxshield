@@ -81,7 +81,7 @@ class Navbar extends Component {
     };
     return (
       <nav>
-        <Link to="/"><img src={BannerImage} alt="banner" width="100%" height="45px"/></Link>
+        <Link to="/"><img src={BannerImage} alt="banner" width="190px" /></Link>
         <div className="spacer"/>
         <Autosuggest 
           suggestions={suggestions}
