@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 import {getMangaById} from '../../actions/mangaActions';
 
 import Spinner from '../common/Spinner';
-import NoImage from '../home/no_image.png';
+import bgImage from '../common/LogoRectangle.png';
+
 
 // Pagination
 import Pagination from '../common/Pagination'
@@ -81,7 +82,7 @@ class MangaInfo extends Component {
                         <div className="columnForMangaInfo _25">
                             {
                                 manga.image===null 
-                                ? <div className="mangaImage" style={{ backgroundImage: `url(${NoImage})` }}/>
+                                ? <div className="mangaImage" style={{ backgroundImage: `url(${bgImage})` }}/>
                                 : <div className="mangaImage" style={{ backgroundImage: `url(${path + manga.image})` }}/>
                             }
                         </div>

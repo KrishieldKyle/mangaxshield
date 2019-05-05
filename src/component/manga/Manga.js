@@ -26,7 +26,8 @@ class Manga extends Component {
          pageTotal: 0,
          chapterLoading: false,
          options: "",
-         optionLoading: true
+         optionLoading: true,
+         disableArrow: false
         };
         this.mainComponent = React.createRef();
         ArrowKeysReact.config({
@@ -85,35 +86,43 @@ class Manga extends Component {
 
     
     handleRightPagination = () => {
-        if(this.state.currentPage<this.state.pageTotal){
-          this.setState({currentPage: this.state.currentPage+1, chapterLoading: true}, ()=>{
-                setTimeout(()=>{
-                this.setState({chapterLoading: false})
-                }, 1000)
-            })
-        }else{
-            if(this.props.chapters.nextChapterId!==null){
-                this.props.history.push(`/${this.props.chapters.mangaId}/${this.props.chapters.nextChapterId}/${this.props.chapters.nextChapterIndex}`);
-                window.location.reload();
-            }
-            
+        this.setState({disableArrow:true})
+        if(!this.state.disableArrow){
+            if(this.state.currentPage<this.state.pageTotal){
+                this.setState({currentPage: this.state.currentPage+1, chapterLoading: true}, ()=>{
+                      setTimeout(()=>{
+                      this.setState({chapterLoading: false})
+                      }, 1000)
+                  })
+              }else{
+                  if(this.props.chapters.nextChapterId!==null){
+                      this.props.history.push(`/${this.props.chapters.mangaId}/${this.props.chapters.nextChapterId}/${this.props.chapters.nextChapterIndex}`);
+                      window.location.reload();
+                  }
+                  
+              }
         }
+        
       }
     
       handleLeftPagination = () => {
-        if(this.state.currentPage>1){
-          this.setState({currentPage: this.state.currentPage-1, chapterLoading: true}, ()=>{
-              setTimeout(()=>{
-                this.setState({chapterLoading: false})
-              }, 1000)
-          })
-        }else{
-            if(this.props.chapters.prevChapterId!==null){
-                this.props.history.push(`/${this.props.chapters.mangaId}/${this.props.chapters.prevChapterId}/${this.props.chapters.prevChapterIndex}`);
-                window.location.reload();
-            }
-           
+        this.setState({disableArrow:true})
+        if(!this.state.disableArrow){
+            if(this.state.currentPage>1){
+                this.setState({currentPage: this.state.currentPage-1, chapterLoading: true}, ()=>{
+                    setTimeout(()=>{
+                      this.setState({chapterLoading: false})
+                    }, 1000)
+                })
+              }else{
+                  if(this.props.chapters.prevChapterId!==null){
+                      this.props.history.push(`/${this.props.chapters.mangaId}/${this.props.chapters.prevChapterId}/${this.props.chapters.prevChapterIndex}`);
+                      window.location.reload();
+                  }
+                 
+              }
         }
+        
       }
 
   render() {
@@ -146,7 +155,7 @@ class Manga extends Component {
         }else{
             image =(<div className="containerFlex">
             <ChapterPagination pageStart={currentPage} len={pageTotal} handleLeftPagination={this.handleLeftPagination} handleRightPagination={this.handleRightPagination}/>
-            <img onClick={this.handleRightPagination} src={path+chapter[currentPage-1][1]} alt="" width="100%" height="100%"/>
+            <img onLoad={()=>this.setState({disableArrow:false})} onClick={this.handleRightPagination} src={path+chapter[currentPage-1][1]} alt="" width="100%" height="100%"/>
             <ChapterPagination pageStart={currentPage} len={pageTotal} handleLeftPagination={this.handleLeftPagination} handleRightPagination={this.handleRightPagination}/>
         </div>)
         }

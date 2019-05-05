@@ -3,8 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import './Home.css'
-import NoImage from './no_image.png';
-
+import bgImage from '../common/LogoRectangle.png';
 
 import Spinner from '../common/Spinner';
 
@@ -63,7 +62,7 @@ class Home extends Component {
             {/* <h1>{man.a}</h1> */}
             {man.im===null ? 
               <Link to={`/${man.i}`}>
-                <div className="mangaItem" style={{ backgroundImage: `url(${NoImage})` }}>
+                <div className="mangaItem" style={{ backgroundImage: `url(${bgImage})` }}>
                   <div className="spacer"/>
                   <p>{man.t}</p>
                 </div>
@@ -93,7 +92,7 @@ class Home extends Component {
     }
 
     return (
-      <div className="homeContainer" style={{ backgroundImage: `url(${this.state.bgImage})` }}>
+      <div className="homeContainer" style={{ backgroundImage: `url(${bgImage})` }}>
       <p>Read Manga Online!</p>
         {homeItems}
       </div>

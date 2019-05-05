@@ -3,6 +3,8 @@ import { Link,withRouter } from "react-router-dom";
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
+import BannerImage from '../common/BannerLogo.png'
+
 import Autosuggest from 'react-autosuggest';
 import './Navbar.css'
 
@@ -79,7 +81,7 @@ class Navbar extends Component {
     };
     return (
       <nav>
-        <Link to="/"><h1>MangaXshield</h1></Link>
+        <Link to="/"><img src={BannerImage} alt="banner" width="100%" height="45px"/></Link>
         <div className="spacer"/>
         <Autosuggest 
           suggestions={suggestions}

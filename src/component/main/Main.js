@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import './Main.css'
 
 
@@ -20,9 +20,6 @@ export default class Main extends Component {
     return (
       
         <div className="mainContainer">
-          {/* <Route exact path="/" component={Home} />
-          <Route exact path="/:id" component={MangaInfo} />
-          <Sidebar/> */}
           <Route exact path="/" render={props => <div className="mainContainer"><Home props={props}/><Sidebar props={props}/></div>} />
           <Route exact path="/:id" render={props => <div className="mainContainer"><MangaInfo props={props}/><Sidebar props={props}/></div>} />
           <Route exact path="/:id/:chapterId/:index" component={Manga} />

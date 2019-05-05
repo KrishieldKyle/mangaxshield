@@ -5,7 +5,7 @@
     padding: 0.5em;
     background-repeat: no-repeat;
     background-size: cover;
-    background-blend-mode: lighten;
+    background-blend-mode: color-dodge;
     background-position: center;
 }
 

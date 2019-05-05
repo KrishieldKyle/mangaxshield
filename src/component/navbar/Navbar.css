@@ -5,10 +5,11 @@ nav {
     display: flex;
     align-items: center;
     z-index: 1000;
-    background-image: linear-gradient(rgb(202, 209, 209), rgb(189, 185, 185), rgb(202, 209, 209));
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(228, 226, 226), rgb(202, 209, 209));
 }
 
 nav a{
+    margin-left: 2%;
     text-decoration: none;
     color: inherit;
     outline: none;

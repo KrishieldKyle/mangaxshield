@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import './Sidebar.css'
-import moment from 'moment-timezone'; 
 
 //workers
 import SidebarWorker from "../common/workers/SidebarWorker"

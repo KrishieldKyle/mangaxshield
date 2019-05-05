@@ -1,42 +1,40 @@
 {
-  "name": "mangaxshield",
-  "version": "1.0.0",
-  "description": "manga website",
-  "main": "app.js",
-  "scripts": {
-    "client-install": "npm install --prefix client",
-    "start": "node app.js",
-    "server": "nodemon app.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && npm install --prefix krishield-kyle-plagiarism"
-  },
-  "keywords": [
-    "manga",
-    "website"
-  ],
-  "author": "Krishield Kyle Santoyo",
-  "license": "ISC",
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
+    "arrow-keys-react": "^1.0.6",
     "axios": "^0.18.0",
-    "body-parser": "^1.19.0",
-    "concurrently": "^4.1.0",
-    "express": "^4.16.4",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.5.5",
-    "node-fetch": "^2.5.0",
-    "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0",
-    "passport-validator": "^1.2.2"
+    "moment-timezone": "^0.5.25",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-autosuggest": "^9.4.3",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
-  "devDependencies": {
-    "nodemon": "^1.19.0"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KrishieldKyle/mangaxshield.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "bugs": {
-    "url": "https://github.com/KrishieldKyle/mangaxshield/issues"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
