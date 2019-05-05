@@ -86,20 +86,30 @@
         height: 250px;
         background-size: 150px 250px;
     }
+
+    .mangaItem p {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 1350px) {
     .mangaItem{
         width: 130px;
-        height: 230px;
-        background-size: 130px 230px;
+        height: 210px;
+        background-size: 130px 210px;
+    }
+    .mangaItem p {
+        font-size: 15px;
     }
 }
 
 @media (max-width: 405px) {
     .mangaItem{
         width: 100px;
-        height: 180px;
-        background-size: 100px 180px;
+        height: 160px;
+        background-size: 100px 160px;
+    }
+    .mangaItem p {
+        font-size: 10px;
     }
 }
